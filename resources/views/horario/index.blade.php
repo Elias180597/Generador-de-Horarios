@@ -120,7 +120,7 @@
 <!-- modal nuevo horario -->
 
 
-<!-- append modal set data -->
+<!-- end modal set data -->
 <div class="modal fade" id="DataEdit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
