@@ -1534,3 +1534,7 @@ Did you mean one of these?
 #55 C:\\xampp\\htdocs\\GHorarios\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
 #56 {main}
 "} 
+[2018-08-07 04:14:46] local.ERROR: Class Illuminate\Foundation\Auth\User contains 1 abstract method and must therefore be declared abstract or implement the remaining methods (Illuminate\Contracts\Auth\CanResetPassword::getEmailForPasswordReset) {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalErrorException(code: 1): Class Illuminate\\Foundation\\Auth\\User contains 1 abstract method and must therefore be declared abstract or implement the remaining methods (Illuminate\\Contracts\\Auth\\CanResetPassword::getEmailForPasswordReset) at C:\\xampp\\htdocs\\GHorarios\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Auth\\User.php:13)
+[stacktrace]
+#0 {main}
+"} 

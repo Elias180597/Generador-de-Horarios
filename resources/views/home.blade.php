@@ -29,7 +29,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 Matricula:
-                                <b>{{ Auth::user()->id }}</b>
+                                <b>{{ Auth::user()->matricula }}</b>
                             </div>
                             <div class="col-md-6">
                                 Correo Estudiantil:
