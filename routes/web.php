@@ -19,17 +19,23 @@ Route::get('/horario/imprimir', function () {
     return view('/horario/imprimir');
 });
 
-Route::get('/horario/index', function () {
+/*Route::get('/horario/index', function () {
     return view('/horario/index');
-});
+});*/
+//Route::post('agregarHorario', 'HorariosController@store')->('agregarHorario.store');
+Route::post('contact', 'HorariosController@store')->name('contact.store');
 
-Route::get('/horario/lista', function () {
+
+Route::get('/horario/index', 'HorariosController@index')->name('/horario/index');
+
+/*Route::get('/horario/lista', function () {
     return view('/horario/lista');
-});
+});*/
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/horario/lista', 'HorariosController@verHorarios')->name('/horario/lista');
 
 
 Auth::routes();

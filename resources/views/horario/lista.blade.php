@@ -63,16 +63,32 @@
      <div class="panel panel-info" style="margin-top: 20px;">
        <div class="panel-heading"><i class="fa fa-calendar" aria-hidden="true"></i> Lista de Horarios</div>
        <div class="panel-body nopadding">
-        <?php 
-        if(isset($_GET['page']) && !empty($_GET['page']))
-        {
-        if (isset($_GET['page'])){
-          horariostable($_GET['page']);
-        }else{
-          horariostable(1);
-        }
-      }
-        ?>
+       <div class="card-body">
+             <table class="table">
+            <thead>
+             <tr>
+             <th scope="col">#</th>
+             <th scope="col">Descripción</th>
+             <th scope="col">Días</th>
+             <th scope="col">Inicio</th>
+             <th scope="col">Final</th>
+             <th scope="col">Minutos</th>
+        </tr>
+        </thead>
+           <tbody>
+           @foreach($horarios as $item)
+        <tr>
+          <th scope="row">{{$item->idHorario}}</th>
+          <td>{{$item->descripcion}}</td>
+          <td>{{$item->dias}}</td>
+          <td>{{$item->inicio}}</td>
+          <td>{{$item->final}}</td>
+          <td>{{$item->dividir}}</td>
+       </tr>
+        @endforeach
+      </tbody>
+       </table>
+       </div>
       </div>
     </div>
   </div>

@@ -80,11 +80,12 @@
           </div>
           <div class="modal-body">
 
-           <form id="horariofrm">
+           {!! Form::open(['route' => 'contact.store']) !!}
+            @csrf
             <label>Nombre:</label>
-            <input class="form-control" type="text" name="nombre" >
+            <input class="form-control" type="text" name="nombre" id="nombre">
             <label>Descripción:</label>
-            <textarea class="form-control" name="descripcion" rows="3"></textarea>
+            <textarea class="form-control" name="descripcion" id="descripcion" rows="3"></textarea>
             <label>Dias:</label>
             <div id="days-list" class="col-sm-12">
              <a data-day="1" class="day-option">Lunes</a>
@@ -95,23 +96,24 @@
              <a data-day="6" class="day-option">Sabado</a>
              <a data-day="7" class="day-option">Domingo</a>
            </div>
-           <input id="days-chose" class="form-control" type="text" name="days" >
+           <!--id="days-chose" -->
+           <input class="form-control" type="text" name="dias" id="days-chose" >
            <label>Inicio:</label>
-           <input class="form-control" type="text" id="time1" name="tiempo1">
+           <input class="form-control" type="text" id="time1" name="inicio">
            <label>Final:</label>
-           <input class="form-control" type="text" id="time2" name="tiempo2">
+           <input class="form-control" type="text" id="time2" name="final">
            <label>Dividir Entre:</label>
-           <select class="form-control" name="minutos">
+           <select class="form-control" name="dividir" id="dividir">
             <option></option>
             <option value="35">35 Minutos</option>
             <option value="45">45 minutos</option>
             <option value="60">1 Hora</option>
           </select>
-        </form>
-
+          {!! Form::submit('Crear', ['class' => 'btn btn-info']) !!}
+          <!--<button type="button" class="create-horario btn btn-success"><i class="fa fa-calendar-check-o"></i> Crear</button>-->
+          {!! Form::close() !!}
       </div>
       <div class="modal-footer">
-        <button type="button" class="create-horario btn btn-success"><i class="fa fa-calendar-check-o"></i> Crear</button>
         <button type="button" class="cancel-new btn btn-danger" data-dismiss="modal"><i class="fa fa-times"></i> Cancelar</button>
       </div>
     </div>
@@ -163,17 +165,17 @@
 
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="../js/_js/jquery.min.js"></script>
+<script src="../js/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="../js/_js/bootstrap.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
 <!-- datetimepicker -->
-<script src="../js/_js/moment-with-locales.js"></script>
-<script src="../js/_js/bootstrap-datetimepicker.js"></script>
+<script src="../js/moment-with-locales.js"></script>
+<script src="../js/bootstrap-datetimepicker.js"></script>
 <!-- validate -->
-<script src="../js/_js/jquery.validate.min.js"></script>
-<script src="../js/_js/additional-methods.min.js"></script>
+<script src="../js/jquery.validate.min.js"></script>
+<script src="../js/additional-methods.min.js"></script>
 <!-- script -->
-<script src="../js/_js/script.js"></script>
+<script src="../js/script.js"></script>
 
 </div>
 

@@ -13,7 +13,15 @@ class Horario extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('horario', function (Blueprint $table) {
+            $table->increments('idHorario');
+            $table->string('descripcion');
+            $table->string('dias');
+            $table->string('inicio');
+            $table->string('final');
+            $table->string('dividir');
+
+         });
     }
 
     /**
@@ -23,6 +31,6 @@ class Horario extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('horario');
     }
 }

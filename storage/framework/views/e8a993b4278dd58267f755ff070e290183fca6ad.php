@@ -63,16 +63,32 @@
      <div class="panel panel-info" style="margin-top: 20px;">
        <div class="panel-heading"><i class="fa fa-calendar" aria-hidden="true"></i> Lista de Horarios</div>
        <div class="panel-body nopadding">
-        <?php 
-        if(isset($_GET['page']) && !empty($_GET['page']))
-        {
-        if (isset($_GET['page'])){
-          horariostable($_GET['page']);
-        }else{
-          horariostable(1);
-        }
-      }
-        ?>
+       <div class="card-body">
+             <table class="table">
+            <thead>
+             <tr>
+             <th scope="col">#</th>
+             <th scope="col">Descripción</th>
+             <th scope="col">Días</th>
+             <th scope="col">Inicio</th>
+             <th scope="col">Final</th>
+             <th scope="col">Minutos</th>
+        </tr>
+        </thead>
+           <tbody>
+           <?php $__currentLoopData = $horarios; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+        <tr>
+          <th scope="row"><?php echo e($item->idHorario); ?></th>
+          <td><?php echo e($item->descripcion); ?></td>
+          <td><?php echo e($item->dias); ?></td>
+          <td><?php echo e($item->inicio); ?></td>
+          <td><?php echo e($item->final); ?></td>
+          <td><?php echo e($item->dividir); ?></td>
+       </tr>
+        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+      </tbody>
+       </table>
+       </div>
       </div>
     </div>
   </div>

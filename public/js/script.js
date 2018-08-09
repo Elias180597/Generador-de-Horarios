@@ -50,7 +50,7 @@ $('.cancel-new').on('click', function(){
 
 
 
-$('.create-horario').on('click', function(){
+/*$('.create-horario').on('click', function(){
 jQuery.validator.setDefaults({
   debug: true,
   success: "valid",
@@ -209,7 +209,7 @@ if (dado == true){
 }else{
 novalid();
 }
-});
+});*/
 //=============================================================================
     });
 });
