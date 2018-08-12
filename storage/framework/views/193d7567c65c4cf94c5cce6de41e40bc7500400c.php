@@ -92,19 +92,17 @@
           <h4 class="modal-title" id="myModalLabel"><i class="fa fa-thumb-tack"></i> Agregar Cuatrimestre</h4>
         </div>
         <div class="modal-body">
-          <form id="taskfrm">
+        <form id="taskfrm">
            <label>Cuatrimestre</label>
-           <input class="form-control" type="text" id="nametask" >
+           <input class="form-control" type="text" id="nametask" value="<?php echo e(Auth::user()->cuatrimestre); ?>">
            <label>Materia:</label>
-           <select class="form-control" id="idcolortask">
-           <option value=""  selected="" required> Elija</option>
-                    <?php $__currentLoopData = $materias; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $materia): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                    <option value="<?php echo e($materia->id); ?>">
-                      <?php echo e($materia->nombre); ?>
-
-                    </option>
-                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                  </select>
+                  <div class="form-group form-float">
+                                <div class="form-line">
+                                    <input  list="idcolortask" class="form-control" name="atencionalist" id="atencionalist"></select>
+                                    <datalist id="idcolortask">
+                                    </datalist>
+                                </div>
+                            </div>
           <input id="tede" type="hidden" name="tede" >
         </form>
 
@@ -135,6 +133,6 @@
 <script src="../js/additional-methods.min.js"></script>
 <!-- script -->
 <script src="../js/scripts-custom.js"></script>
-<script src="../js/servicios.js"></script>
+<script src="../js/servicio2.js"></script>
 </body>
 </html>
