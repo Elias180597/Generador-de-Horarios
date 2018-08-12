@@ -78,10 +78,10 @@
 
                             <div class="col-md-6">
                                 <select id="carrera" class="form-control<?php echo e($errors->has('carrera') ? ' is-invalid' : ''); ?>" name="carrera" required value="<?php echo e(old('carrera')); ?>">
-                                    <option value="1">Ingenieria en Tecnologias de la Informacion</option>
-                                    <option value="2">Ingenieria en  Energia</option>
-                                    <option value="3">Ingenieria en Telecomunicaciones</option>
-                                    <option value="4">Ingenieria en Industrial</option>
+                                    <option value="2">Ingenieria en Tecnologias de la Informacion</option>
+                                    <option value="3">Ingenieria en  Energia</option>
+                                    <option value="4">Ingenieria en Telecomunicaciones</option>
+                                    <option value="1">Ingenieria en Industrial</option>
                                 </select>
 
                                 <?php if($errors->has('carrera')): ?>
