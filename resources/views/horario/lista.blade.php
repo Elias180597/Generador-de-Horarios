@@ -92,18 +92,18 @@
           <h4 class="modal-title" id="myModalLabel"><i class="fa fa-thumb-tack"></i> Agregar Cuatrimestre</h4>
         </div>
         <div class="modal-body">
-
           <form id="taskfrm">
            <label>Cuatrimestre</label>
            <input class="form-control" type="text" id="nametask" >
            <label>Materia:</label>
            <select class="form-control" id="idcolortask">
-            <option value="purple-label">Purpura</option>
-            <option value="red-label">Rojo</option>
-            <option value="blue-label">Azul</option>
-            <option value="pink-label">Rosa</option>
-            <option value="green-label">Verde</option>
-          </select> 
+           <option value=""  selected="" required> Elija</option>
+                    @foreach($materias as $materia)
+                    <option value="{{$materia->id}}">
+                      {{$materia->nombre}}
+                    </option>
+                    @endforeach
+                  </select>
           <input id="tede" type="hidden" name="tede" >
         </form>
 

@@ -18,7 +18,15 @@ class HorariosController extends Controller
 
     public function index()
     {
-        return view('horario.index');
+        $idCarrera = \Auth::user()->carrera; 
+        $idCuatri = \Auth::user()->cuatrimestre; 
+
+        $materias = DB::table('materias')
+    ->where('id_carrera','=',$idCarrera)
+    ->where('cuatrimestre','=',$idCuatri)
+    ->get();
+    
+        return view('horario.index',compact('materias'));
     }
 
     public function imprimir($id){
@@ -47,8 +55,29 @@ class HorariosController extends Controller
 
     public function verHorarios(){
         $horarios = DB::table('horarios')->get();
-        return view('horario.lista',compact('horarios'));
+        $idCarrera = \Auth::user()->carrera; 
+        $idCuatri = \Auth::user()->cuatrimestre; 
+
+        $materias = DB::table('materias')
+    ->where('id_carrera','=',$idCarrera)
+    ->where('cuatrimestre','=',$idCuatri)
+    ->get();
+    
+
+        return view('horario.lista',compact('horarios','materias'));
     }
+
+    public function getCurrentMaterias(){
+        $idCarrera = \Auth::user()->carrera; 
+        $idCuatri = \Auth::user()->cuatrimestre; 
+
+        $materias = DB::table('materias')
+    ->where('id_carrera','=',$idCarrera)
+    ->where('cuatrimestre','=',$idCuatri)
+    ->get();
+    return $materias;
+    }
+
 
 
    

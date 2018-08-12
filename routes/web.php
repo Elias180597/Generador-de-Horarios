@@ -20,15 +20,23 @@ Route::get('horario/pdf/view', function() {
      PDF::load($html)->show();
      return view('/horario/lista');
 });
-/*Route::get('/horario/imprimir', function () {
-    return view('/horario/imprimir');
-});*/
+
+Route::get('getMaterias/{idCarrera}/{idCuatri}',function($idCarrera,$idCuatri){
+    $materias = DB::table('materias')
+    ->where('id_carrera','=',$idCarrera)
+    ->where('cuatrimestre','=',$idCuatri)
+    ->get();
+    return $materias;
+});
+
+
+Route::get('getCarreras', function() {
+    return $carreras = DB::table('carreras')->get();
+});
+
 Route::get('/horario/imprimir/{id}', 'HorariosController@imprimir');
 
-/*Route::get('/horario/index', function () {
-    return view('/horario/index');
-});*/
-//Route::post('agregarHorario', 'HorariosController@store')->('agregarHorario.store');
+
 Route::post('contact', 'HorariosController@store')->name('contact.store');
 
 
@@ -42,7 +50,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/horario/lista', 'HorariosController@verHorarios')->name('/horario/lista');
-
+Route::get('/getMateriasby','HorariosController@getCurrentMaterias')->name('getMateriasby');
 
 Auth::routes();
 

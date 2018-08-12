@@ -80,10 +80,10 @@
 
                             <div class="col-md-6">
                                 <select id="carrera" class="form-control{{ $errors->has('carrera') ? ' is-invalid' : '' }}" name="carrera" required value="{{ old('carrera') }}">
-                                    <option value="Inenieria en Tecnologias de la Informacion">Ingenieria en Tecnologias de la Informacion</option>
-                                    <option value="Inenieria en  Energia">Ingenieria en  Energia</option>
-                                    <option value="Inenieria en Telecomunicaciones">Ingenieria en Telecomunicaciones</option>
-                                    <option value="Ingenieria en Industrial">Ingenieria en Industrial</option>
+                                    <option value="1">Ingenieria en Tecnologias de la Informacion</option>
+                                    <option value="2">Ingenieria en  Energia</option>
+                                    <option value="3">Ingenieria en Telecomunicaciones</option>
+                                    <option value="4">Ingenieria en Industrial</option>
                                 </select>
 
                                 @if ($errors->has('carrera'))
