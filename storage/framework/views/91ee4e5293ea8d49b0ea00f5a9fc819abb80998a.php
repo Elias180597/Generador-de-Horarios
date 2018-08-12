@@ -16,10 +16,17 @@
 
     <!-- Styles -->
     <link href="<?php echo e(asset('css/app.css')); ?>" rel="stylesheet">
+    <style>
+     @import  url('../css/_css/bootstrap-datetimepicker.css');
+  @import  url('../css/_css/font-awesome.min.css');
+  @import  url('../css/_css/bootstrap.min.css');
+  @import  url('../css/_css/animate.css');
+  @import  url('../css/_css/style.css');
+    </style>
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
+        <nav class="navbar navbar-expand-md navbar-light navbar-laravel" style="position: relative;top: -355px;">
             <div class="container">
                 <a class="navbar-brand" href="<?php echo e(url('/')); ?>">
                     <?php echo e(config('app.name', 'Laravel')); ?>

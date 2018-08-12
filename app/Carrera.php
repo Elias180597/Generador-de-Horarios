@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Carrera extends Model
 {
-     protected $fillable = [
-         'nombre'
-    ];
+    protected $table = "carreras";
+    protected $fillable = ['carrera','created_at','updated_at'];
+    protected $primaryKey = "id";
 }

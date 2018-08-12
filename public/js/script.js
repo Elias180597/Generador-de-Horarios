@@ -50,7 +50,7 @@ $('.cancel-new').on('click', function(){
 
 
 
-/*$('.create-horario').on('click', function(){
+$('.create-horario').on('click', function(){
 jQuery.validator.setDefaults({
   debug: true,
   success: "valid",
@@ -77,7 +77,7 @@ if (dado == true){
       $.ajax({
 
          type: 'POST',
-         url: 'include/process.php',
+         url: '../../resources/views/include/process.blade.php',
          data: sender,
          beforeSend: function(){
              $('#mynew').html('');
@@ -179,7 +179,7 @@ if (dado == true){
                     $.ajax({
 
                         type: 'POST',
-                        url: 'include/process.php',
+                        url: '../../resources/views/include/process.blade.php',
                         data: horariodata,
                         beforeSend: function(){
                             btnsave.prop('disabled', true);
@@ -189,7 +189,7 @@ if (dado == true){
                         success: function(){
                             $('#thetable').addClass('animated bounceOut');
                             btnsave.prop('disabled', false);
-                            setTimeout(function(){window.location='lista.php'});
+                            setTimeout(function(){window.location='lista'});
 
                         },
                         error: function(){
@@ -209,7 +209,7 @@ if (dado == true){
 }else{
 novalid();
 }
-});*/
+});
 //=============================================================================
     });
 });
