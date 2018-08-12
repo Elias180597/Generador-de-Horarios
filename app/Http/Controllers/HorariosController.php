@@ -20,13 +20,16 @@ class HorariosController extends Controller
     {
         $idCarrera = \Auth::user()->carrera; 
         $idCuatri = \Auth::user()->cuatrimestre; 
+        $carrera = DB::table('users as u')
+        ->join('carreras as c','u.carrera','=','c.id')
+        ->pluck('c.carrera');
 
         $materias = DB::table('materias')
     ->where('id_carrera','=',$idCarrera)
     ->where('cuatrimestre','=',$idCuatri)
     ->get();
     
-        return view('horario.index',compact('materias'));
+        return view('horario.index',compact('materias','carrera'));
     }
 
     public function imprimir($id){

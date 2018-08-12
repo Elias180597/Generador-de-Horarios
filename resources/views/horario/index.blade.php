@@ -92,7 +92,7 @@
             <label>Descripción:</label>
             <textarea class="form-control" name="descripcion" rows="3" >
             Ingenieria Cursando:
-            {{Auth::user()->carrera}}
+            {{$carrera[0]}}
             Matricula:
             {{ Auth::user()->matricula }}
             Correo Estudiantil:
@@ -147,14 +147,21 @@
            <label>Cuatrimestre</label>
            <input class="form-control" type="text" id="nametask" value="{{Auth::user()->cuatrimestre}}">
            <label>Materia:</label>
-           <select class="form-control" id="idcolortask">
+          <!--<select class="form-control" id="idcolortask">
            <option value=""  selected="" required> Elija</option>
                     @foreach($materias as $materia)
                     <option value="{{$materia->id}}">
                       {{$materia->nombre}}
                     </option>
                     @endforeach
-                  </select>
+                  </select>-->
+                  <div class="form-group form-float">
+                                <div class="form-line">
+                                    <input  list="idcolortask" class="form-control" name="atencionalist" id="atencionalist"></select>
+                                    <datalist id="idcolortask">
+                                    </datalist>
+                                </div>
+                            </div>
           <input id="tede" type="hidden" name="tede" >
         </form>
 
@@ -188,6 +195,8 @@
     <script src="../js/additional-methods.min.js"></script>
     <!-- script -->
     <script src="../js/script.js"></script>
+
+    <script src="../js/servicios.js"></script>
 
   </body>
 </html>

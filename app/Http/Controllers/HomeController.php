@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use DB;
 
 class HomeController extends Controller
 {
@@ -23,6 +24,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $idCarrera = \Auth::user()->carrera;
+        $carrera = DB::table('users as u')
+        ->join('carreras as c','u.carrera','=','c.id')
+        ->pluck('c.carrera');
+        
+
+        return view('home',compact('carrera'));
     }
 }

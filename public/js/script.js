@@ -121,9 +121,10 @@ if (dado == true){
                 $('.savetask').on('click', function(){
                      var tede = $('#tede').val();
                      var tasker = $('#nametask').val();
-                     var color = $('#idcolortask option:selected').val();
+                     var materia = $('#atencionalist').val();
+                     var tagColor = "red-label";
                      $('#DataEdit').modal('toggle');
-                     $('#'+tede).append('<label class="label-desc '+color+'">'+tasker+' <a class="deltasker"><i class="fa fa-times"></i></a></label>');
+                     $('#'+tede).append('<label class="label-desc '+tagColor+'">'+materia+' <a class="deltasker"><i class="fa fa-times"></i></a></label>');
                      //$('#'+tede).text(tasker).addClass(color).show();
                      $('#taskfrm')[0].reset();
 

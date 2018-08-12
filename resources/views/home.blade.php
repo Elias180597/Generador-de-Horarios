@@ -22,7 +22,7 @@
                             </div>
                             <div class="col-md-6">
                                 Ingenieria Cursando:
-                                <b>{{ Auth::user()->carrera }}</b>
+                                <b>{{$carrera[0]}}</b>
                             </div>
                         </div>
                         

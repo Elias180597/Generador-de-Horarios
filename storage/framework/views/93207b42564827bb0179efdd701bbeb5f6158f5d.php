@@ -21,7 +21,7 @@
                             </div>
                             <div class="col-md-6">
                                 Ingenieria Cursando:
-                                <b><?php echo e(Auth::user()->carrera); ?></b>
+                                <b><?php echo e($carrera[0]); ?></b>
                             </div>
                         </div>
                         

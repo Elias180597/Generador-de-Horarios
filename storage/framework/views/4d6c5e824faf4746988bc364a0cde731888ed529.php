@@ -93,7 +93,7 @@
             <label>Descripción:</label>
             <textarea class="form-control" name="descripcion" rows="3" >
             Ingenieria Cursando:
-            <?php echo e(Auth::user()->carrera); ?>
+            <?php echo e($carrera[0]); ?>
 
             Matricula:
             <?php echo e(Auth::user()->matricula); ?>
@@ -151,7 +151,7 @@
            <label>Cuatrimestre</label>
            <input class="form-control" type="text" id="nametask" value="<?php echo e(Auth::user()->cuatrimestre); ?>">
            <label>Materia:</label>
-           <select class="form-control" id="idcolortask">
+          <!--<select class="form-control" id="idcolortask">
            <option value=""  selected="" required> Elija</option>
                     <?php $__currentLoopData = $materias; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $materia): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <option value="<?php echo e($materia->id); ?>">
@@ -159,7 +159,14 @@
 
                     </option>
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                  </select>
+                  </select>-->
+                  <div class="form-group form-float">
+                                <div class="form-line">
+                                    <input  list="idcolortask" class="form-control" name="atencionalist" id="atencionalist"></select>
+                                    <datalist id="idcolortask">
+                                    </datalist>
+                                </div>
+                            </div>
           <input id="tede" type="hidden" name="tede" >
         </form>
 
@@ -193,6 +200,8 @@
     <script src="../js/additional-methods.min.js"></script>
     <!-- script -->
     <script src="../js/script.js"></script>
+
+    <script src="../js/servicios.js"></script>
 
   </body>
 </html>

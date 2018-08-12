@@ -29,6 +29,14 @@ Route::get('getMaterias/{idCarrera}/{idCuatri}',function($idCarrera,$idCuatri){
     return $materias;
 });
 
+Route::get('getMateriasbyCuatri/{idCuatri}',function($idCuatri){
+    $idCarrera = \Auth::user()->carrera;
+    $materias = DB::table('materias')
+    ->where('id_carrera','=',$idCarrera)
+    ->where('cuatrimestre','=',$idCuatri)
+    ->get();
+    return $materias;
+});
 
 Route::get('getCarreras', function() {
     return $carreras = DB::table('carreras')->get();
