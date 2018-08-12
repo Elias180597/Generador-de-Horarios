@@ -1,7 +1,6 @@
-<?php
-//include url('../include/config.php');
-//require_once url('../include/functions.php');
-?>
+
+<?php echo $__env->make('include.config', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php echo $__env->make('include.functions', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +8,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-  <title>Horarios | JHCodes</title>
+  <title>::Lista::</title>
 
   <!-- Bootstrap -->
   <link href='https://fonts.googleapis.com/css?family=Maven+Pro' rel='stylesheet' type='text/css'>
@@ -60,43 +59,24 @@
 
     <!-- container -->
     <div class="container" >
-     <div class="panel panel-info" style="margin-top: 20px;">
-       <div class="panel-heading"><i class="fa fa-calendar" aria-hidden="true"></i> Lista de Horarios</div>
-       <div class="panel-body nopadding">
-       <div class="card-body">
-             <table class="table">
-            <thead>
-             <tr>
-             <th scope="col">#</th>
-             <th scope="col">Descripción</th>
-             <th scope="col">Días</th>
-             <th scope="col">Inicio</th>
-             <th scope="col">Final</th>
-             <th scope="col">Minutos</th>
-        </tr>
-        </thead>
-           <tbody>
-           <?php $__currentLoopData = $horarios; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $item): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-        <tr>
-          <th scope="row"><?php echo e($item->idHorario); ?></th>
-          <td><?php echo e($item->descripcion); ?></td>
-          <td><?php echo e($item->dias); ?></td>
-          <td><?php echo e($item->inicio); ?></td>
-          <td><?php echo e($item->final); ?></td>
-          <td><?php echo e($item->dividir); ?></td>
-       </tr>
-        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-      </tbody>
-       </table>
-       </div>
+         <div class="panel panel-info" style="margin-top: 20px;">
+           <div class="panel-heading"><i class="fa fa-calendar" aria-hidden="true"></i> Lista de Horarios</div>
+           <div class="panel-body nopadding">
+                <?php 
+                    if (isset($_GET['page'])){
+                      horariostable($_GET['page']);
+                    }else{
+                      horariostable(1);
+                    }
+                ?>
+           </div>
+         </div>
       </div>
-    </div>
-  </div>
-  <!-- container -->
+    <!-- container -->
 
-  <!-- apend data -->
-  <div id="appenddata"></div>
-  <!-- apend data -->
+    <!-- apend data -->
+    <div id="appenddata"></div>
+    <!-- apend data -->
 
 
   <!-- append modal set data -->
@@ -105,14 +85,14 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close canceltask" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="fa fa-times"></i></span></button>
-          <h4 class="modal-title" id="myModalLabel"><i class="fa fa-thumb-tack"></i> Agregar Tarea</h4>
+          <h4 class="modal-title" id="myModalLabel"><i class="fa fa-thumb-tack"></i> Agregar Cuatrimestre</h4>
         </div>
         <div class="modal-body">
 
           <form id="taskfrm">
-           <label>Tarea</label>
+           <label>Cuatrimestre</label>
            <input class="form-control" type="text" id="nametask" >
-           <label>Color:</label>
+           <label>Materia:</label>
            <select class="form-control" id="idcolortask">
             <option value="purple-label">Purpura</option>
             <option value="red-label">Rojo</option>
@@ -139,17 +119,17 @@
 
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="../js/_js/jquery.min.js"></script>
+<script src="../js/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="../js/_js/bootstrap.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
 <!-- datetimepicker -->
-<script src="../js/_js/moment-with-locales.js"></script>
-<script src="../js/_js/bootstrap-datetimepicker.js"></script>
+<script src="../js/moment-with-locales.js"></script>
+<script src="../js/bootstrap-datetimepicker.js"></script>
 <!-- validate -->
-<script src="../js/_js/jquery.validate.min.js"></script>
-<script src="../js/_js/additional-methods.min.js"></script>
+<script src="../js/jquery.validate.min.js"></script>
+<script src="../js/additional-methods.min.js"></script>
 <!-- script -->
-<script src="../js/_js/scripts-custom.js"></script>
+<script src="../js/scripts-custom.js"></script>
 
 </body>
 </html>

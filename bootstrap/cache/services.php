@@ -32,6 +32,7 @@
     28 => 'App\\Providers\\EventServiceProvider',
     29 => 'App\\Providers\\RouteServiceProvider',
     30 => 'Collective\\Html\\HtmlServiceProvider',
+    31 => 'Vsmoraes\\Pdf\\PdfServiceProvider',
   ),
   'eager' => 
   array (
@@ -158,6 +159,7 @@
     'Collective\\Html\\HtmlBuilder' => 'Collective\\Html\\HtmlServiceProvider',
     'Collective\\Html\\FormBuilder' => 'Collective\\Html\\HtmlServiceProvider',
     'NunoMaduro\\Collision\\Contracts\\Provider' => 'NunoMaduro\\Collision\\Adapters\\Laravel\\CollisionServiceProvider',
+    'Vsmoraes\\Pdf\\Pdf' => 'Vsmoraes\\Pdf\\PdfServiceProvider',
   ),
   'when' => 
   array (
@@ -204,6 +206,9 @@
     array (
     ),
     'NunoMaduro\\Collision\\Adapters\\Laravel\\CollisionServiceProvider' => 
+    array (
+    ),
+    'Vsmoraes\\Pdf\\PdfServiceProvider' => 
     array (
     ),
   ),

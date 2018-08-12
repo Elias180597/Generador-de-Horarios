@@ -48,10 +48,14 @@
     <!-- menu -->
     <div id="menu" class="col-md-12 text-right">
       <div class="container">
+      <a class="btn btn-info" href="<?php echo URL::to('/home'); ?>">
+          <i class="fa fa-backward"></i> Regresar</a>
         <a class="btn btn-primary" href="<?php echo e(url('/horario/lista')); ?>">
           <i class="fa fa-calendar" aria-hidden="true"></i> Lista de Horarios</a>
         <a class="btn btn-warning" href="<?php echo e(url('/horario/index')); ?>">
           <i class="fa fa-calendar-check-o"></i> Nuevo Horario</a>
+          <a class="btn btn-danger" href="<?php echo URL::to('/logout'); ?>">
+          <i class="fa fa-sign-out"></i> Salir</a>
       </div>
     </div>
     <!-- menu -->
@@ -85,14 +89,14 @@
       <div class="modal-content">
         <div class="modal-header">
           <button type="button" class="close canceltask" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="fa fa-times"></i></span></button>
-          <h4 class="modal-title" id="myModalLabel"><i class="fa fa-thumb-tack"></i> Agregar Tarea</h4>
+          <h4 class="modal-title" id="myModalLabel"><i class="fa fa-thumb-tack"></i> Agregar Cuatrimestre</h4>
         </div>
         <div class="modal-body">
 
           <form id="taskfrm">
-           <label>Tarea</label>
+           <label>Cuatrimestre</label>
            <input class="form-control" type="text" id="nametask" >
-           <label>Color:</label>
+           <label>Materia:</label>
            <select class="form-control" id="idcolortask">
             <option value="purple-label">Purpura</option>
             <option value="red-label">Rojo</option>

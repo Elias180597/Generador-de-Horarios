@@ -1,3 +1,5 @@
+
+
 <?php $__env->startSection('content'); ?>
 <head>
   <meta charset="utf-8">
@@ -51,8 +53,12 @@
       <!-- menu -->
       <div id="menu" class="col-md-12 text-right">
         <div class="container" style="position: relative;top: 32px;">
+        <a class="btn btn-info" href="<?php echo URL::to('/home'); ?>">
+          <i class="fa fa-backward"></i> Regresar</a>
           <a class="btn btn-primary" href="<?php echo e(url('/horario/lista')); ?>"><i class="fa fa-calendar" aria-hidden="true"></i> Lista de Horarios</a>
           <button class="btn btn-warning" data-toggle="modal" data-target="#myModal"><i class="fa fa-calendar-check-o"></i> Nuevo Horario</button>
+          <a class="btn btn-danger" href="<?php echo URL::to('/logout'); ?>">
+          <i class="fa fa-sign-out"></i> Salir</a>
         </div>
       </div>
       <!-- menu -->
@@ -83,9 +89,19 @@
         
          <form id="horariofrm">
             <label>Nombre:</label>
-            <input class="form-control" type="text" name="nombre" >
+            <input class="form-control" type="text" name="nombre" value="<?php echo e(Auth::user()->name); ?>" >
             <label>Descripción:</label>
-            <textarea class="form-control" name="descripcion" rows="3"></textarea>
+            <textarea class="form-control" name="descripcion" rows="3" >
+            Ingenieria Cursando:
+            <?php echo e(Auth::user()->carrera); ?>
+
+            Matricula:
+            <?php echo e(Auth::user()->matricula); ?>
+
+            Correo Estudiantil:
+            <?php echo e(Auth::user()->email); ?>
+
+            </textarea>
             <label>Dias:</label>
             <div id="days-list" class="col-sm-12">
                <a data-day="1" class="day-option">Lunes</a>
@@ -127,14 +143,14 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close canceltask" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="fa fa-times"></i></span></button>
-        <h4 class="modal-title" id="myModalLabel"><i class="fa fa-thumb-tack"></i> Agregar Tarea</h4>
+        <h4 class="modal-title" id="myModalLabel"><i class="fa fa-thumb-tack"></i> Agregar Cuatrimestre</h4>
       </div>
       <div class="modal-body">
         
         <form id="taskfrm">
-           <label>Tarea</label>
+           <label>Cuatrimestre</label>
            <input class="form-control" type="text" id="nametask" >
-           <label>Color:</label>
+           <label>Materia:</label>
            <select class="form-control" id="idcolortask">
               <option value="purple-label">Purpura</option>
               <option value="red-label">Rojo</option>
@@ -178,4 +194,3 @@
 
   </body>
 </html>
-<?php echo $__env->make('../layouts/app', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

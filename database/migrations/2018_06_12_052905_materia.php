@@ -18,6 +18,7 @@ class Materia extends Migration
             $table->increments('id');
             $table->string('nombre');//Nombre de las Materias
             $table->integer('id_carrera')->unsigned();
+            $table->string('cuatrimestre');
             $table->foreign('id_carrera')->references('id')->on('carreras')->onDelete('cascade');
             $table->timestamps();//Fecha de creacion || Fecha de Modificacion 
         });

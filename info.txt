@@ -1,0 +1,2 @@
+php artisan db:seed --class=MateriasSeed
+php artisan db:seed --class=CarrerasSeed

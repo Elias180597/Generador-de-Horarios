@@ -160,6 +160,9 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         'Collective\Html\HtmlServiceProvider',
+       // Barryvdh\DomPDF\ServiceProvider::class,
+        Vsmoraes\Pdf\PdfServiceProvider::class,
+
 
     ],
 
@@ -211,6 +214,8 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Form' => 'Collective\Html\FormFacade',
         'Html' => 'Collective\Html\HtmlFacade',
+        'PDF' => 'Vsmoraes\Pdf\PdfFacade',
+        //'PDF' => Barryvdh\DomPDF\Facade::class,
 
     ],
 

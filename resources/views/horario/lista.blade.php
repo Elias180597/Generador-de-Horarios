@@ -48,10 +48,14 @@
     <!-- menu -->
     <div id="menu" class="col-md-12 text-right">
       <div class="container">
+      <a class="btn btn-info" href="{!!URL::to('/home')!!}">
+          <i class="fa fa-backward"></i> Regresar</a>
         <a class="btn btn-primary" href="{{ url('/horario/lista') }}">
           <i class="fa fa-calendar" aria-hidden="true"></i> Lista de Horarios</a>
         <a class="btn btn-warning" href="{{ url('/horario/index') }}">
           <i class="fa fa-calendar-check-o"></i> Nuevo Horario</a>
+          <a class="btn btn-danger" href="{!!URL::to('/logout')!!}">
+          <i class="fa fa-sign-out"></i> Salir</a>
       </div>
     </div>
     <!-- menu -->

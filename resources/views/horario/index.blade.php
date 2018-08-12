@@ -1,4 +1,4 @@
-@extends('../layouts/app')
+
 
 @section('content')
 <head>
@@ -52,8 +52,12 @@
       <!-- menu -->
       <div id="menu" class="col-md-12 text-right">
         <div class="container" style="position: relative;top: 32px;">
+        <a class="btn btn-info" href="{!!URL::to('/home')!!}">
+          <i class="fa fa-backward"></i> Regresar</a>
           <a class="btn btn-primary" href="{{ url('/horario/lista') }}"><i class="fa fa-calendar" aria-hidden="true"></i> Lista de Horarios</a>
           <button class="btn btn-warning" data-toggle="modal" data-target="#myModal"><i class="fa fa-calendar-check-o"></i> Nuevo Horario</button>
+          <a class="btn btn-danger" href="{!!URL::to('/logout')!!}">
+          <i class="fa fa-sign-out"></i> Salir</a>
         </div>
       </div>
       <!-- menu -->
@@ -84,9 +88,16 @@
         
          <form id="horariofrm">
             <label>Nombre:</label>
-            <input class="form-control" type="text" name="nombre" >
+            <input class="form-control" type="text" name="nombre" value="{{Auth::user()->name}}" >
             <label>Descripción:</label>
-            <textarea class="form-control" name="descripcion" rows="3"></textarea>
+            <textarea class="form-control" name="descripcion" rows="3" >
+            Ingenieria Cursando:
+            {{Auth::user()->carrera}}
+            Matricula:
+            {{ Auth::user()->matricula }}
+            Correo Estudiantil:
+            {{ Auth::user()->email }}
+            </textarea>
             <label>Dias:</label>
             <div id="days-list" class="col-sm-12">
                <a data-day="1" class="day-option">Lunes</a>
@@ -128,14 +139,14 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close canceltask" data-dismiss="modal" aria-label="Close"><span aria-hidden="true"><i class="fa fa-times"></i></span></button>
-        <h4 class="modal-title" id="myModalLabel"><i class="fa fa-thumb-tack"></i> Agregar Tarea</h4>
+        <h4 class="modal-title" id="myModalLabel"><i class="fa fa-thumb-tack"></i> Agregar Cuatrimestre</h4>
       </div>
       <div class="modal-body">
         
         <form id="taskfrm">
-           <label>Tarea</label>
+           <label>Cuatrimestre</label>
            <input class="form-control" type="text" id="nametask" >
-           <label>Color:</label>
+           <label>Materia:</label>
            <select class="form-control" id="idcolortask">
               <option value="purple-label">Purpura</option>
               <option value="red-label">Rojo</option>
