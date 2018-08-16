@@ -93,6 +93,7 @@
         </div>
         <div class="modal-body">
         <form id="taskfrm">
+        {{ csrf_field() }}
            <label>Cuatrimestre</label>
            <input class="form-control" type="text" id="nametask" value="{{Auth::user()->cuatrimestre}}">
            <label>Materia:</label>

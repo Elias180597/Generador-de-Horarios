@@ -10,6 +10,7 @@ $('.verhorario').on('click', function(){
 
    var dataid = $(this).attr('data-id');
    var processsend = 'process=3&data='+dataid;
+   var currentLocation = location.origin + location.pathname.replace('horario/lista', 'horariov/');
 
    $.ajax({
        type: 'POST',

@@ -42,6 +42,7 @@ Route::get('getCarreras', function() {
     return $carreras = DB::table('carreras')->get();
 });
 
+
 Route::get('/horario/imprimir/{id}', 'HorariosController@imprimir');
 
 
@@ -49,6 +50,10 @@ Route::post('contact', 'HorariosController@store')->name('contact.store');
 
 
 Route::get('/horario/index', 'HorariosController@index')->name('/horario/index');
+
+
+Route::post('horariov', 'ProcessController@store')->name('horariov.store');
+
 
 Route::get('/logout',function(){
     Auth::logout();

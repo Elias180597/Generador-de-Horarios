@@ -93,6 +93,8 @@
         </div>
         <div class="modal-body">
         <form id="taskfrm">
+        <?php echo e(csrf_field()); ?>
+
            <label>Cuatrimestre</label>
            <input class="form-control" type="text" id="nametask" value="<?php echo e(Auth::user()->cuatrimestre); ?>">
            <label>Materia:</label>
