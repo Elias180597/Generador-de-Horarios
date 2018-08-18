@@ -52,7 +52,7 @@ Route::post('contact', 'HorariosController@store')->name('contact.store');
 Route::get('/horario/index', 'HorariosController@index')->name('/horario/index');
 
 
-Route::post('horariov', 'ProcessController@store')->name('horariov.store');
+Route::post('horariov', 'ProcessController@getResource')->name('horariov.store');
 
 
 Route::get('/logout',function(){

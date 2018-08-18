@@ -106,6 +106,7 @@
                                 </div>
                             </div>
           <input id="tede" type="hidden" name="tede" >
+          <input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>">
         </form>
 
       </div>

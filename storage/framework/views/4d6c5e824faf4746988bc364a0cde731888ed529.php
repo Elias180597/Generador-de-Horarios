@@ -89,9 +89,9 @@
         
          <form id="horariofrm">
             <label>Nombre:</label>
-            <input class="form-control" type="text" name="nombre" value="<?php echo e(Auth::user()->name); ?>" >
+            <input class="form-control" type="text" id="nombre" name="nombre" value="<?php echo e(Auth::user()->name); ?>" >
             <label>Descripción:</label>
-            <textarea class="form-control" name="descripcion" rows="3" >
+            <textarea class="form-control" name="descripcion" id="descripcion" rows="3" >
             Ingenieria Cursando:
             <?php echo e($carrera[0]); ?>
 
@@ -112,13 +112,13 @@
                <a data-day="6" class="day-option">Sabado</a>
                <a data-day="7" class="day-option">Domingo</a>
             </div>
-            <input id="days-chose" class="form-control" type="text" name="days" >
+            <input id="days-chose" class="form-control" type="text" name="days">
             <label>Inicio:</label>
             <input class="form-control" type="text" id="time1" name="tiempo1">
             <label>Final:</label>
             <input class="form-control" type="text" id="time2" name="tiempo2">
             <label>Dividir Entre:</label>
-            <select class="form-control" name="minutos">
+            <select class="form-control" name="minutos" id="minutos">
                 <option></option>
                 <option value="35">35 Minutos</option>
                 <option value="45">45 minutos</option>
@@ -168,6 +168,7 @@
                                 </div>
                             </div>
           <input id="tede" type="hidden" name="tede" >
+          <input type="hidden" name="_token" value="<?php echo e(csrf_token()); ?>">
         </form>
 
       </div>

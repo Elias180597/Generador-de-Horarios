@@ -9,13 +9,15 @@ function novalid(){
 $('.verhorario').on('click', function(){
 
    var dataid = $(this).attr('data-id');
-   var processsend = 'process=3&data='+dataid;
-   var currentLocation = location.origin + location.pathname.replace('horario/lista', 'horariov/');
-
+   //var processsend = 'process=3&data='+dataid;
+   var process = '3';
+   var currentLocation = location.origin + location.pathname.replace('horario/lista', 'horariov');
+   var _token = $("input[name='_token']").val();
+    //url: '../../resources/views/include/process.blade.php',
    $.ajax({
        type: 'POST',
-       url: '../../resources/views/include/process.blade.php',
-       data: processsend,
+       url:currentLocation,
+       data: {process:process, data:dataid,_token: _token},
        beforeSend: function(){
          $('#appenddata').html(' ');
        },
@@ -114,13 +116,23 @@ $('.verhorario').on('click', function(){
                     var nombre = $('#nombreinput').val();
                     var horario = $('#edithorariotabledata').html();
                     var iddata = $('#inputidedit').val();
-                    var horariodata = 'process=4&nombre='+nombre+'&descripcion='+descripcion+'&horario='+horario+'&id='+iddata;
+                    //var horariodata = 'process=4&nombre='+nombre+'&descripcion='+descripcion+'&horario='+horario+'&id='+iddata;
+                    var process = '4';
+                    var currentLocation = location.origin + location.pathname.replace('horario/lista', 'horariov');
+                    var _token = $("input[name='_token']").val();
 
                     $.ajax({
 
                         type: 'POST',
-                        url: '../../resources/views/include/process.blade.php',
-                        data: horariodata,
+                        url: currentLocation,
+                        data:{
+                            process:process,
+                            id:iddata,
+                            nombre:nombre,
+                            descripcion:descripcion,
+                            horario:horario,
+                            _token: _token
+                            },
                         beforeSend: function(){
                             btnsave.prop('disabled', true);
                             $('#horario-name').addClass('opacityelement');
@@ -154,13 +166,17 @@ $('.delhorario').on('click', function(){
   
    var horario = $(this).attr('data-id');
    var horariodata = 'process=5&dataid='+horario;
+   var process = '5';
+   var dataid = horario;
    var elemento = $('#trhorario'+horario);
+   var currentLocation = location.origin + location.pathname.replace('horario/lista', 'horariov');
+   var _token = $("input[name='_token']").val();
 
    $.ajax({
 
        type: 'POST',
-       url: '../../resources/views/include/process.blade.php',
-       data: horariodata,
+       url: currentLocation,
+       data: {process:process, dataid:dataid,_token: _token},
         beforeSend: function(){
            elemento.find('button').prop('disabled', true);
            elemento.addClass('opacityelement');

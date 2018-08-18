@@ -72,13 +72,21 @@ if (dado == true){
 
       var getdatos = horariofrm.serialize();
       var sender = 'process=1&'+getdatos;
-      
+      var currentLocation = location.origin + location.pathname.replace('horario/index', 'horariov');
+      var _token = $("input[name='_token']").val();
+      var process = '1';
+      var days = $('#days-chose').val();
+      var nombre = $('#nombre').val();
+      var tiempo1 = $('#time1').val();
+      var tiempo2 = $('#time2').val();
+      var minutos = $('#minutos').val();
+
 
       $.ajax({
 
          type: 'POST',
-         url: '../../resources/views/include/process.blade.php',
-         data: sender,
+         url: currentLocation,
+         data: {process:process,days:days,nombre:nombre,tiempo1:tiempo1,tiempo2:tiempo2,minutos:minutos,_token: _token},
          beforeSend: function(){
              $('#mynew').html('');
              $('#MyModal').modal('toggle');
@@ -172,16 +180,19 @@ if (dado == true){
                 $('.guardarhorario').on('click', function(){
                     
                     var btnsave = $(this);
-                    var descripcion = $('#descripcioninput').val();
+                    var descripcion = $('#descripcion').val();
                     var nombre = $('#nombreinput').val();
                     var horario = $('#mynew').html();
-                    var horariodata = 'process=2&nombre='+nombre+'&descripcion='+descripcion+'&horario='+horario;
-
+                    //var horariodata = 'process=2&nombre='+nombre+'&descripcion='+descripcion+'&horario='+horario;
+                    //var nombre = $('#nombre').val();
+                    var currentLocation = location.origin + location.pathname.replace('horario/index', 'horariov');
+                    var _token = $("input[name='_token']").val();
+                    var process = '2';
                     $.ajax({
 
                         type: 'POST',
-                        url: '../../resources/views/include/process.blade.php',
-                        data: horariodata,
+                        url: currentLocation,
+                        data: {process:process,descripcion:descripcion,nombre:nombre,horario:horario,_token: _token},
                         beforeSend: function(){
                             btnsave.prop('disabled', true);
                             $('#horario-name').addClass('opacityelement');
@@ -190,7 +201,7 @@ if (dado == true){
                         success: function(){
                             $('#thetable').addClass('animated bounceOut');
                             btnsave.prop('disabled', false);
-                            setTimeout(function(){window.location='lista'});
+                            setTimeout(function(){window.location='index'});
 
                         },
                         error: function(){

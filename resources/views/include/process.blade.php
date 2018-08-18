@@ -1,6 +1,8 @@
+@include('include.config')
 <?php
 
-require_once 'config.blade.php';
+
+//require_once 'config.blade.php';
 // conexion de la base de datos
 $conexion = Conexion::singleton_conexion();
 
